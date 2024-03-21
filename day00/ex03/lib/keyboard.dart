@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'calculator_button.dart';
+
 class Keyboard extends StatelessWidget {
   const Keyboard(
       {required this.onKeyPress,
       required this.isPortrait,
-      required this.buttons,
       super.key});
 
-  final Function(String) onKeyPress;
+  final Function(CalculatorButton) onKeyPress;
 
   final bool isPortrait;
-  final List<String> buttons;
+
+  final List<CalculatorButton> buttons = CalculatorButton.values;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class Keyboard extends StatelessWidget {
         itemBuilder: (context, index) {
           return TextButton(
               onPressed: () => onKeyPress(buttons[index]),
-              child: Text(buttons[index]));
+              child: Text(buttons[index].value));
         });
   }
 }
