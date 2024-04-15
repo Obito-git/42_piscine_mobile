@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class Screen extends StatelessWidget {
-  const Screen({required this.expression, required this.result, super.key});
+class CalculatorScreen extends StatelessWidget {
+  const CalculatorScreen(
+      {required this.expression, required this.result, super.key});
   final String expression;
   final String result;
 
@@ -11,8 +12,7 @@ class Screen extends StatelessWidget {
     return Container(
         color: Colors.grey,
         width: double.infinity,
-        alignment: const AlignmentDirectional(0.95, -1.0),
-        child: Column(children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
           Text(
             expression,
             style: textStyle,

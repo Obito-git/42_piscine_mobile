@@ -57,7 +57,8 @@ class _MainPageState extends State<MainPage> {
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       appBar: AppBar(
-        title: Text(appName),
+        backgroundColor: Colors.blue,
+        title: Center(child: Text(appName)),
       ),
       body: Column(
         children: [
